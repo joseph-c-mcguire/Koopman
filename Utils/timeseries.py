@@ -36,6 +36,8 @@ def add_lags(df: pd.DataFrame,
 
     # If given int, turn to a list
     if isinstance(lag, int):
+        if lag == 0:
+            return temp
         lag = [lag]*len(columns)
     else:
         if len(lag) != len(columns):
